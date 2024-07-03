@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World with Cookie!</title>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <p>Enter your name:</p>
+  <input type="text" id="username" placeholder="Enter your name">
+  <button onclick="greetUser()">Submit</button>
+ 
+  <script>
+    function greetUser() {
+      // Get the username from the input field
+      var username = document.getElementById("username").value;
+
+      // Check if username is empty
+      console.log("Username",username);
+      if (username) {
+        // Set a cookie named "username" with the entered value
+        document.cookie = "username=" + username;
+        console.log("Username",username);
+        //alert("Welcome, " + username + "!");
+      } else {
+        alert("Please enter your name!");
+      }
+    }
+    
+  
+  </script>
+</body>
+</html>
+
+</script>
