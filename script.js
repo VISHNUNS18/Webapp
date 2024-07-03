@@ -3,27 +3,39 @@ const usernameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const rememberMeCheckbox = document.getElementById('remember-me');
 
+// Function to set a cookie
+function setCookie(name, value, expires) {
+  let cookie = `${name}=${value}`;
+  if (expires) {
+    cookie += `; expires=${expires}`;
+  }
+  document.cookie = cookie;
+}
+
+// Set a sample cookie on page load
+window.onload = () => {
+  setCookie('sample-cookie', 'sample-value', new Date(Date.now() + 86400000).toUTCString()); // Expires in 24 hours
+};
+
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Prevent default form submission
 
   const username = usernameInput.value;
   const email = emailInput.value;
-  const expires = new Date(Date.now() + 86400000).toUTCString();
   const rememberMe = rememberMeCheckbox.checked;
-  document.cookie = `site-name=vishnu`;
-  document.cookie = `remember-me=false; expires=${expires}`;
-  // Set username cookie
-  document.cookie = `username=${username}`;
+  const expires = new Date(Date.now() + 86400000).toUTCString(); // Expires in 24 hours
 
-  // Set email cookie (if provided)
+  setCookie('site-name', 'vishnu');
+  setCookie('username', username);
+
   if (email) {
-    document.cookie = `email=${email}`;
+    setCookie('email', email);
   }
 
-  // Set remember me cookie (optional with expiry)
   if (rememberMe) {
-    const expires = new Date(Date.now() + 86400000).toUTCString(); // Expires in 24 hours
-    document.cookie = `remember-me=true; expires=${expires}`;
+    setCookie('remember-me', 'true', expires);
+  } else {
+    setCookie('remember-me', 'false', expires);
   }
 
   alert(`Successfully registered! Username: ${username}, Email: ${email}`);
