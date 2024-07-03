@@ -8,8 +8,10 @@ form.addEventListener('submit', (event) => {
 
   const username = usernameInput.value;
   const email = emailInput.value;
+  const expires = new Date(Date.now() + 86400000).toUTCString();
   const rememberMe = rememberMeCheckbox.checked;
-
+  document.cookie = `site-name=vishnu`;
+  document.cookie = `remember-me=false; expires=${expires}`;
   // Set username cookie
   document.cookie = `username=${username}`;
 
