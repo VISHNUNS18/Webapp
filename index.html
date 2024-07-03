@@ -2,35 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World with Cookie!</title>
-  <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d78edd9568623c5534fdb8ff/script.js"></script> <!-- End cookieyes banner -->
-</head>
+  <title>Registration with Cookies</title>
+   <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d78edd9568623c5534fdb8ff/script.js"></script> <!-- End cookieyes banner -->
+  <link rel="stylesheet" href="style.css"> </head>
 <body>
-  <h1>Hello World!</h1>
-  <p>Enter your name:</p>
-  <input type="text" id="username" placeholder="Enter your name">
-  <button onclick="greetUser()">Submit</button>
- 
-  <script>
-    function greetUser() {
-      // Get the username from the input field
-      var username = document.getElementById("username").value;
+  <h1>Welcome!</h1>
+  <p>Please register to continue.</p>
+  <form id="registration-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Enter username">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email">
+    <label for="remember-me">
+      <input type="checkbox" id="remember-me" name="remember-me"> Remember me
+    </label>
+    <button type="submit">Register</button>
+  </form>
 
-      // Check if username is empty
-      console.log("Username",username);
-      if (username) {
-        // Set a cookie named "username" with the entered value
-        document.cookie = "username=" + username;
-        console.log("Username",username);
-        alert("Welcome, " + username + "!");
-      } else {
-        alert("Please enter your name!");
-      }
-    }
-    
-  
-  </script>
-</body>
+  <script src="script.js"></script> </body>
 </html>
-
-</script>
