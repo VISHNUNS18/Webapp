@@ -16,7 +16,17 @@ function setCookie(name, value, expires) {
 window.onload = () => {
   setCookie('sample-cookie', 'sample-value', new Date(Date.now() + 86400000).toUTCString()); // Expires in 24 hours
 };
+const privacyButton = document.getElementById('privacy-policy-button');
+const privacyPopup = document.getElementById('privacy-popup');
+const closeButton = document.querySelector('.privacy-popup-close');
 
+privacyButton.addEventListener('click', () => {
+  privacyPopup.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+  privacyPopup.style.display = 'none';
+});
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // Prevent default form submission
 
