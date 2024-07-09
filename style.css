@@ -40,6 +40,25 @@ body {
   }
   
   button:hover {
-    background-color: #444;
+    background-color: #575757;
   }
   
+  .top-bar {
+    background-color: #0f300d;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Space items evenly */
+  }
+
+  /* Style the navigation links */
+  .top-bar a {
+    color: inherit; /* Inherit color from top-bar */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px;
+  }
+
+  /* Optional: Apply a hover effect to links */
+  .top-bar a:hover {
+    color: #ddd; /* Change color on hover */
+  }
